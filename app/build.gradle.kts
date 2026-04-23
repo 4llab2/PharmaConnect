@@ -31,6 +31,10 @@ android {
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
+
+    }
+    composeOptions {
+        kotlinCompilerExtensionVersion = "1.5.1" // Utilise 1.5.1 pour Kotlin 1.9.0
     }
 }
 
@@ -43,4 +47,7 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+    implementation("org.osmdroid:osmdroid-android:6.1.18")
+    implementation("androidx.compose.material3:material3:1.2.0")
+    implementation("androidx.compose.ui:ui:1.6.0")
 }

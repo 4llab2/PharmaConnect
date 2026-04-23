@@ -1,0 +1,35 @@
+<resources>
+    <string name="app_name">PharmaConnect</string>
+    <string name="welcom">Bienvenue sur PharmaConnect</string>
+    <string name="title">Trouvez vos médicament et commendez en quelques clic</string>
+    <string name="login">Se connecter</string>
+    <string name="singup">Créer un compte</string>
+    <string name="welcom_back">Bon retour !</string>
+    <string name="login_reminder">Connecter-vous pour continuer.</string>
+    <string name="Email">nom@example.com</string>
+    <string name="pass">Mot de passe</string>
+    <string name="pass_oublier">Mot de passe oublier ?</string>
+    <string name="singup_reminder">Vous n’avez pas de compte ?</string>
+    <string name="singup_2">Inscrivez-vous.</string>
+    <string name="title_2">Qui étes-vous ?</string>
+    <string name="choice">Choisissez votre profil pour continuer</string>
+    <string name="client_title">Accédez rapidement aux médicaments dont vous avez besoin</string>
+    <string name="pharmacie_title">Gérez et développez votre activité facilement</string>
+    <string name="client_account">En tant que</string>
+    <string name="name">Nom complet</string>
+    <string name="name_example">Ahmed Bensalem</string>
+    <string name="password">********</string>
+    <string name="pharmacy_name">Pharmacie centrale</string>
+    <string name="pharmacy">Nom de la pharmacie</string>
+    <string name="email_de_recuperation">Entrez votre email pour recevoir un code de réinitialisation.</string>
+    <string name="send_code">Envoyer le code</string>
+    <string name="email_verification">Vérifier ton email</string>
+    <string name="cod_waiting">Un code à 4 chiffres a été envoyé à ton email</string>
+    <string name="code_verification">Code de vérification</string>
+    <string name="code_reciver">Vous n’avez pas reçu le code ?</string>
+    <string name="select_password">Choisissez un nouveau mot de passe sécurisé.</string>
+    <string name="new_password">Nouveau mot de passe</string>
+    <string name="confrim_password">Confirmer le mot de passe</string>
+    <string name="password_changed">Mot de passe réinitialisé !</string>
+    <string name="password_changed_alert">Votre mot de passe a été mis à jour avec succés. Vous pouvez maintenant vous connecter.</string>
+</resources>

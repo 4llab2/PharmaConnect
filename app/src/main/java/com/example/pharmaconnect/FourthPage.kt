@@ -8,6 +8,7 @@ import com.example.pharmaconnect.databinding.ActivityFourthPageBinding
 import com.example.pharmaconnect.databinding.FirstPageBinding
 import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.firestore.FirebaseFirestore
 
 class FourthPage : AppCompatActivity() {
@@ -25,28 +26,28 @@ class FourthPage : AppCompatActivity() {
         binding.btnFourthpSignup.setOnClickListener {
 
             val fullname = binding.etFourthpName.text.toString().trim()
-            val email    = binding.etFourthpEmail.text.toString().trim()
+            val email = binding.etFourthpEmail.text.toString().trim()
             val password = binding.etFourthpPassword.text.toString().trim()
 
-            if (fullname.isEmpty()){
+            if (fullname.isEmpty()) {
                 binding.etFourthpName.error = "Entrez votre nom complet"
 
-            }else if (fullname.length < 3){
+            } else if (fullname.length < 3) {
                 binding.etFourthpName.error = "Nom trop court"
 
-            }else if (email.isEmpty()){
+            } else if (email.isEmpty()) {
                 binding.etFourthpEmail.error = "Entrez votre email"
 
-            }else if (!android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()){
+            } else if (!android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
                 binding.etFourthpEmail.error = "Email invalide"
 
-            }else if (password.isEmpty()){
+            } else if (password.isEmpty()) {
                 binding.etFourthpPassword.error = "Entrez votre mot de passe"
 
-            }else if (password.length < 6 ){
+            } else if (password.length < 6) {
                 binding.etFourthpPassword.error = "Minimum 6 caractere"
 
-            }else {
+            } else {
                 FirebaseAuth.getInstance()
                     .createUserWithEmailAndPassword(email, password)
                     .addOnSuccessListener { result ->
@@ -59,20 +60,25 @@ class FourthPage : AppCompatActivity() {
                             "type" to "client"
                         )
 
-                        FirebaseFirestore.getInstance()
-                            .collection("clients").document(uid)
-                            .set(client)
+                        FirebaseDatabase.getInstance().getReference("clients")
+                            .child(uid)
+                            .setValue(client)
                             .addOnSuccessListener {
                                 Toast.makeText(this, "Compte créé !", Toast.LENGTH_SHORT).show()
-                                val intent = Intent(this, accueil_client::class.java)
-                                startActivity(intent)
+                                val newaccount = Intent(this, accueil_client::class.java)
+                                startActivity(newaccount)
                                 finish()
                             }
                     }
                     .addOnFailureListener { e ->
                         Toast.makeText(this, "Erreur : ${e.message}", Toast.LENGTH_SHORT).show()
                     }
-        }
+            }
+            binding.ivFourthpageArrow.setOnClickListener {
+                finish()
+            }
 
+
+        }
     }
 }

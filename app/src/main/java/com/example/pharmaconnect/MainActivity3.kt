@@ -17,16 +17,16 @@ class MainActivity3 : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.clientLayout.setOnClickListener {
-            var clientlayout = Intent ( this, FourthPage::class.java)
-            startActivity(clientlayout)
+            var client  = Intent ( this, FourthPage::class.java)
+            startActivity(client)
         }
         binding.ivThirdpArrow.setOnClickListener {
             finish()
          }
 
         binding.pharmacieLayout.setOnClickListener {
-            val pharmalayout = Intent ( this, FifthPage::class.java)
-            startActivity(pharmalayout)
+            val pharmacie  = Intent ( this, FifthPage::class.java)
+            startActivity(pharmacie)
         }
 
 

@@ -17,7 +17,7 @@ class MainActivity3 : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.clientLayout.setOnClickListener {
-            var clientlayout = Intent ( this, MainActivity2::class.java)
+            var clientlayout = Intent ( this, FourthPage::class.java)
             startActivity(clientlayout)
         }
         binding.ivThirdpArrow.setOnClickListener {
@@ -25,9 +25,10 @@ class MainActivity3 : AppCompatActivity() {
          }
 
         binding.pharmacieLayout.setOnClickListener {
-            val pharmalayout = Intent ( this, FourthPage::class.java)
+            val pharmalayout = Intent ( this, FifthPage::class.java)
             startActivity(pharmalayout)
         }
+
 
     }
 }

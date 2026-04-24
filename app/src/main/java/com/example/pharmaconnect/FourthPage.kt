@@ -6,6 +6,9 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import com.example.pharmaconnect.databinding.ActivityFourthPageBinding
 import com.example.pharmaconnect.databinding.FirstPageBinding
+import android.widget.Toast
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FirebaseFirestore
 
 class FourthPage : AppCompatActivity() {
 
@@ -44,9 +47,31 @@ class FourthPage : AppCompatActivity() {
                 binding.etFourthpPassword.error = "Minimum 6 caractere"
 
             }else {
-                val intent = Intent (this , FirstPageBinding::class.java)
-                startActivity(intent)
-            }
+                FirebaseAuth.getInstance()
+                    .createUserWithEmailAndPassword(email, password)
+                    .addOnSuccessListener { result ->
+                        val uid = result.user?.uid ?: return@addOnSuccessListener
+
+                        // Sauvegarder dans Firestore
+                        val client = hashMapOf(
+                            "nomComplet" to fullname,
+                            "email" to email,
+                            "type" to "client"
+                        )
+
+                        FirebaseFirestore.getInstance()
+                            .collection("clients").document(uid)
+                            .set(client)
+                            .addOnSuccessListener {
+                                Toast.makeText(this, "Compte créé !", Toast.LENGTH_SHORT).show()
+                                val intent = Intent(this, accueil_client::class.java)
+                                startActivity(intent)
+                                finish()
+                            }
+                    }
+                    .addOnFailureListener { e ->
+                        Toast.makeText(this, "Erreur : ${e.message}", Toast.LENGTH_SHORT).show()
+                    }
         }
 
     }

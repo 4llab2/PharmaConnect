@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="20dp"
+    android:background="#000000">
+
+  <TextView
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:text="Ajouter un médicament"
+      android:textSize="20sp"
+      android:textStyle="bold"
+      android:textColor="#4CAF50"
+      android:gravity="center"
+      android:layout_marginBottom="16dp"/>
+
+  <!-- Nom -->
+  <EditText
+      android:id="@+id/etNom"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:hint="Nom du médicament"
+      android:textColor="#F8F8F8"
+      android:textColorHint="#BBF6BB"
+      android:background="#1A1A1A"
+      android:padding="12dp"
+      android:layout_marginBottom="10dp"/>
+
+  <!-- Prix -->
+  <EditText
+      android:id="@+id/etPrix"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:hint="Prix"
+      android:inputType="numberDecimal"
+      android:textColor="#F8F8F8"
+      android:textColorHint="#BBF6BB"
+      android:background="#1A1A1A"
+      android:padding="12dp"
+      android:layout_marginBottom="10dp"/>
+
+  <!-- Description -->
+  <EditText
+      android:id="@+id/etDescription"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:hint="Description"
+      android:minLines="3"
+      android:gravity="top"
+      android:textColor="#F8F8F8"
+      android:textColorHint="#BBF6BB"
+      android:background="#1A1A1A"
+      android:padding="12dp"
+      android:layout_marginBottom="10dp"/>
+
+  <!-- Stock -->
+  <EditText
+      android:id="@+id/etPosologie"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:hint="Stock"
+      android:inputType="number"
+      android:textColor="#F8F8F8"
+      android:textColorHint="#BBF6BB"
+      android:background="#1A1A1A"
+      android:padding="12dp"
+      android:layout_marginBottom="16dp"/>
+
+  <!-- Button -->
+  <Button
+      android:id="@+id/btnAjouter"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:text="AJOUTER"
+      android:textAllCaps="false"
+      android:backgroundTint="#4CAF50"
+      android:textColor="#F8F8F8"
+      android:padding="14dp"/>
+
+</LinearLayout>
